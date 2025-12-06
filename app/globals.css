@@ -6,10 +6,13 @@
 }
 
 @theme inline {
+  --color-brand: #16a34a;
+  --color-brand-dark: #15803d;
+  --color-brand-light: #4ade80;
+  --color-accent: #f97316;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
 }
 
 @media (prefers-color-scheme: dark) {
