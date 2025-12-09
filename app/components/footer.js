@@ -10,7 +10,6 @@ export default function Footer() {
     return (
         <footer className="bg-gray-800 text-white p-4">
             <nav className="mt-2">
-                {/* Homeリンク */}
                 <Link href="/" className="mr-2">
                     Home
                 </Link>
