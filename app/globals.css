@@ -26,6 +26,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Noto Sans JP", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 @media screen and (max-width: 767px) {
@@ -45,7 +46,19 @@ body {
     transform: translateY(0);
   }
 }
-
 .animate-fadeInUp {
   animation: fadeInUp 0.8s ease-out forwards;
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+

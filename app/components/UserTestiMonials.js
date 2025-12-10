@@ -25,7 +25,11 @@ export default function UserTestiMonials() {
     }, []);
 
     return (
-        <section className="p-6">
+        <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl font-bold text-center mb-4">ユーザーの声</h2>
+            <p className="text-center text-gray-600 mb-12">
+                みんなのリアルな体験談
+            </p>
             <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -41,7 +45,6 @@ export default function UserTestiMonials() {
                     ))}
                 </div>
             </motion.div>
-        </section>
-
+        </div>
     );
 }
