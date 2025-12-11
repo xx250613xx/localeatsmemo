@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -6,7 +6,10 @@ import { motion } from "framer-motion";
 export default function MenuList({ menus }) {
     return (
         <>
-            <h2 className="text-3xl font-bold text-center mb-12">サービスメニュー</h2>
+            <div className="relative mb-12 text-center">
+                <h2 className="relative text-3xl font-bold">サービスメニュー</h2>
+            </div>
+
             <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}

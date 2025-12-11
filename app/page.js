@@ -2,6 +2,7 @@ import MenuList from "./components/menu_list";
 import UserTestimonials from "./components/UserTestiMonials";
 import FeatureIcons from "./components/FeatureIcon";
 import Top_slider from "./components/top_slider";
+import DiagonalBackgroundText from "./components/BackGroundIcons";
 
 export default function Home() {
 
@@ -29,6 +30,7 @@ export default function Home() {
   return (
     <>
       <main>
+        <DiagonalBackgroundText />
         {/* MV Section */}
         <section className="w-full text-center py-16 animate-fadeInUp">
           <h1 className="text-4xl md:text-5xl font-extrabold leading-snug mb-6">
