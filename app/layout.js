@@ -2,6 +2,7 @@
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import BackGroundIcons from "./components/BackGroundIcons";
 
 export const metadata = {
   title: "Local Eats Memo",
@@ -13,7 +14,8 @@ export default function RootLayout({ children }) {
     <html lang="ja">
       <body>
         <Header />
-        {children}
+        <BackGroundIcons />
+          {children}
         <Footer />
       </body>
     </html>

@@ -6,15 +6,16 @@ import { motion } from "framer-motion";
 export default function MenuList({ menus }) {
     return (
         <>
-            <div className="relative mb-12 text-center">
-                <h2 className="relative text-3xl font-bold">サービスメニュー</h2>
-            </div>
-
             <motion.div
-                initial={{ opacity: 0, x: -50 }}
+                initial={{ opacity: 0, x: -70 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
             >
+                <div className="relative mb-12 text-center">
+                    <h2 className="relative text-3xl font-bold">サービスメニュー</h2>
+                </div>
+
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
                     {menus.map((menu, index) => (
                         <Link
@@ -22,7 +23,7 @@ export default function MenuList({ menus }) {
                             href={menu.link}
                             className="block bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow"
                         >
-                            <dl>
+                            <dl className="relative z-10">
                                 <img
                                     src={menu.sumb}
                                     alt={menu.title}

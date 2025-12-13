@@ -6,7 +6,7 @@ export default function Header() {
 
     const allpage = PageList();
     return (
-        <header className="bg-brand-dark text-white p-4">
+        <header className="bg-brand-dark text-white p-4 relative z-10">
             <h1 className="text-xl mb-2 md:mb-0">Local Eats Memo</h1>
             <nav>
                 <ul className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-4 p-2 rounded">

@@ -9,7 +9,7 @@ export default function BackGroundIcons() {
     const iconCount = 10;
     const [mounted, setMounted] = useState(false);
     const [positions, setPositions] = useState([]);
-    const [isRunning, setIsRunning] = useState(false);
+    const [isRunning, setIsRunning] = useState(true);
 
     useEffect(() => {
         setMounted(true);
@@ -34,8 +34,8 @@ export default function BackGroundIcons() {
 
     return (
         <>
-            <div className="fixed inset-0 z-0 overflow-hidden">
-                <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
+            <div className="fixed inset-0 overflow-hidden">
+                <div className="absolute inset-0 flex justify-center items-center pointer-events-none display-none z-1">
                     {Array.from({ length: iconCount }).map((_, i) => (
                         <motion.div
                             key={i}
@@ -55,11 +55,11 @@ export default function BackGroundIcons() {
 
             <button onClick={() => setIsRunning(!isRunning)}>
                 <motion.span
-                    className="fixed bottom-20 right-4 z-50 px-6 py-3 rounded-full font-semibold tracking-wide text-white bg-gradient-to-r from-brand-dark via-brand-dark to-brand-light shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-pink-300 cursor-pointer"
+                    className="fixed bottom-20 right-8 z-50 px-6 py-3 rounded-full font-semibold tracking-wide text-white bg-gradient-to-r from-brand-dark via-brand-dark to-brand-light shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-pink-300 cursor-pointer"
                     animate={isRunning ? { x: 0 } : { x: [0, -5, 5, -5, 0] }}
                     transition={isRunning ? { duration: 0 } : { duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                 >
-                    {isRunning ? "停止" : "🐼 パンダ"}
+                    {isRunning ? "🐼 停止" : "🐼 再開"}
                 </motion.span>
             </button>
         </>

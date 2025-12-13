@@ -1,8 +1,10 @@
-import MenuList from "./components/menu_list";
+import MenuList from "./components/ServiceMenu";
 import UserTestimonials from "./components/UserTestiMonials";
 import FeatureIcons from "./components/FeatureIcon";
 import Top_slider from "./components/top_slider";
-import DiagonalBackgroundText from "./components/BackGroundIcons";
+import BackGroundIcons from "./components/BackGroundIcons";
+import HowToUse from "./components/HowToUse";
+import SnsIcons from "./components/SnsIcons";
 
 export default function Home() {
 
@@ -21,7 +23,7 @@ export default function Home() {
     },
     {
       title: "店舗マップ",
-      text: "サービス一覧から気になる機能を探す",
+      text: "エリアごとに気になる店舗を探す",
       link: "/store_map",
       sumb: "https://placehold.jp/fec190/ffffff/307x307.png?text=Map&css=%7B%22border-radius%22%3A%2215px%22%2C%22font-size%22%3A%2240px%22%2C%22background%22%3A%22%20-webkit-gradient(linear%2C%20left%20top%2C%20left%20bottom%2C%20from(%23f58529)%2C%20to(%23fec190))%22%7D"
     }
@@ -30,9 +32,8 @@ export default function Home() {
   return (
     <>
       <main>
-        <DiagonalBackgroundText />
         {/* MV Section */}
-        <section className="w-full text-center py-16 animate-fadeInUp">
+        <section className="w-full text-center pt-16 animate-fadeInUp relative z-10">
           <h1 className="text-4xl md:text-5xl font-extrabold leading-snug mb-6">
             地域の食を旅しよう。
             <br />
@@ -45,18 +46,28 @@ export default function Home() {
         </section>
 
         {/* Menu Section */}
-        <section className="max-w-6xl mx-auto px-6 py-16 animate-fadeInUp">
+        <section className="bg-gray-50 py-16 animate-fadeInUp">
           <MenuList menus={menus} />
         </section>
 
-        {/* Testimonials Section */}
+        {/* UserTestiMonials Section */}
         <section className="py-16 animate-fadeInUp">
           <UserTestimonials />
         </section>
 
         {/* FeatureIcon Section */}
-        <section className="py-16">
+        <section className="py-16 animate-fadeInUp">
           <FeatureIcons />
+        </section>
+
+        {/* How to Use Section */}
+        <section className="pb-16 animate-fadeInUp">
+          <HowToUse />
+        </section>
+
+        {/* SNS Section */}
+        <section className="bg-gray-100 py-16 animate-fadeInUp">
+          <SnsIcons />
         </section>
       </main>
     </>

@@ -8,7 +8,7 @@ export default function Footer() {
     const segments = pathname.split("/").filter(Boolean); // "/"で分割して空要素除去
 
     return (
-        <footer className="bg-gray-800 text-white p-4">
+        <footer className="bg-gray-800 text-white p-10 relative z-10">
             <nav className="mt-2">
                 <Link href="/" className="mr-2">
                     Home
