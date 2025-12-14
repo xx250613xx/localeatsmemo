@@ -1,16 +1,16 @@
 "use client"
 
-import { motion } from "framer-motion";
+import Animate_motion from "../animation/animation_motion"
 
 export default function HowToUse() {
     return (
-        <motion.div
-            initial={{ opacity: 0, x: -70 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-        >
+        <Animate_motion>
+            {({ animateLine }) => (
             <div className="max-w-4xl mx-auto px-6 text-center">
-                <h2 className="text-3xl font-bold mb-6">使い方はとてもシンプル！</h2>
+                <h2 className="text-3xl font-bold mb-6 inline-block">使い方はとてもシンプル！
+                    <span className={`block h-[4px] bg-gradient-to-r from-brand-dark via-brand-dark to-brand-light rounded-full mt-2 ${animateLine ? "animate-draw" : ""
+                            }`}></span>
+                </h2>
                 <p className="text-lg text-gray-600 mb-10">
                     Local Eats Memo は、地域のグルメを記録・共有するためのアプリです。
                     気になるお店を探して、訪問したら写真やメモを残しましょう。
@@ -31,6 +31,7 @@ export default function HowToUse() {
                     </div>
                 </div>
             </div>
-        </motion.div>
+            )}
+        </Animate_motion>
     )
 }

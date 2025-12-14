@@ -1,41 +1,43 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Animate_motion from "../animation/animation_motion";
 
 export default function MenuList({ menus }) {
     return (
-        <>
-            <motion.div
-                initial={{ opacity: 0, x: -70 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-            >
-                <div className="relative mb-12 text-center">
-                    <h2 className="relative text-3xl font-bold">サービスメニュー</h2>
-                </div>
+        <Animate_motion>
+            {({ animateLine }) => (
+                <>
+                    <div className="relative mb-12 text-center">
+                        <h2 className="relative inline-block text-3xl font-bold">
+                            サービスメニュー
+                            <span className={`block h-[4px] bg-gradient-to-r from-brand-dark via-brand-dark to-brand-light rounded-full mt-2 ${animateLine ? "animate-draw" : ""
+                            }`}></span>
+                        </h2>
+                    </div>
 
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
-                    {menus.map((menu, index) => (
-                        <Link
-                            key={index}
-                            href={menu.link}
-                            className="block bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow"
-                        >
-                            <dl className="relative z-10">
-                                <img
-                                    src={menu.sumb}
-                                    alt={menu.title}
-                                    className="mx-auto mb-4 w-full max-w-[240px] h-auto rounded-md"
-                                />
-                                <dt className="font-bold text-lg mb-2">{menu.title}</dt>
-                                <dd className="text-gray-600">{menu.text}</dd>
-                            </dl>
-                        </Link>
-                    ))}
-                </div>
-            </motion.div>
-        </>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+                        {menus.map((menu, index) => (
+                            <Link
+                                key={index}
+                                href={menu.link}
+                                className="block bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow"
+                            >
+                                <dl className="relative z-10">
+                                    <img
+                                        src={menu.sumb}
+                                        alt={menu.title}
+                                        className="mx-auto mb-4 w-full max-w-[240px] h-auto rounded-md"
+                                    />
+                                    <dt className="font-bold text-lg mb-2">{menu.title}</dt>
+                                    <dd className="text-gray-600">{menu.text}</dd>
+                                </dl>
+                            </Link>
+                        ))}
+                    </div>
+                </>
+            )}
+        </Animate_motion>
     );
 }

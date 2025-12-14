@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Animate_motion from "../animation/animation_motion";
 
 export default function UserTestiMonials() {
     const [testiMonials, setTestiMonials] = useState([]);
@@ -25,13 +26,14 @@ export default function UserTestiMonials() {
     }, []);
 
     return (
-        <motion.div
-            initial={{ opacity: 0, x: -70 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-        >
-            <div className="max-w-6xl mx-auto px-6">
-                <h2 className="text-3xl font-bold text-center mb-4">ユーザーの声</h2>
+        <Animate_motion>
+            {({ animateLine }) => (
+            <div className="max-w-6xl mx-auto px-6 text-center">
+                <h2 className="text-3xl font-bold text-center mb-4 inline-block">
+                    ユーザーの声
+                    <span className={`block h-[4px] bg-gradient-to-r from-brand-dark via-brand-dark to-brand-light rounded-full mt-2 ${animateLine ? "animate-draw" : ""
+                            }`}></span>
+                </h2>
                 <p className="text-center text-gray-600 mb-12">
                     みんなのリアルな体験談
                 </p>
@@ -47,6 +49,7 @@ export default function UserTestiMonials() {
                 </div>
 
             </div>
-        </motion.div>
+            )}
+        </Animate_motion>
     );
 }

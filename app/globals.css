@@ -65,4 +65,16 @@ body {
   animation: marquee 15s linear infinite;
 }
 
+@keyframes draw {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-draw {
+  animation: draw 1s ease-out forwards;
+}
 
