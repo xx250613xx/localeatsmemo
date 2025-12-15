@@ -1,0 +1,131 @@
+[
+    {
+        "id": "store001",
+        "name": "SANS SOUCI(サンスーシィ)",
+        "description": "ゆるりとした空間で味わうとびきりの親子丼&京うどんは絶品です。",
+        "image": "/images/mv_01.jpg",
+        "area": "北中城村",
+        "tags": [
+            "うどん",
+            "親子丼",
+            "ランチ",
+            "デザート"
+        ],
+        "location": {
+            "address": "沖縄県中頭郡北中城村荻道１５０",
+            "hours": "11:00〜20:30"
+        }
+    },
+    {
+        "id": "store002",
+        "name": "肉カフェ みとらぼ",
+        "description": "贅沢すぎるお肉三昧！夢を叶える大人のお子様ランチ",
+        "image": "/images/mv_02.jpg",
+        "area": "読谷村",
+        "tags": [
+            "お肉料理",
+            "ランチ",
+            "デザート"
+        ],
+        "location": {
+            "address": "沖縄県中頭郡読谷村座喜味１９５−８ 1F",
+            "hours": "09:00〜18:00"
+        }
+    },
+    {
+        "id": "store003",
+        "name": "欧風カレー喫茶フランクリン",
+        "description": "絶好のロケーションと心地よい音楽の流れるオールドスタイルなカレー喫茶",
+        "image": "/images/mv_03.jpg",
+        "area": "北中城村",
+        "tags": [
+            "カレー",
+            "ランチ",
+            "ロケーション"
+        ],
+        "location": {
+            "address": "沖縄県中頭郡北中城村 和仁屋406",
+            "hours": "11:00～15:00"
+        }
+    },
+    {
+        "id": "store004",
+        "name": "肉や食堂inへんざ",
+        "description": "特別な日に！A5ランクを贈る。大切な人へ、大切な日に",
+        "image": "/images/mv_05.jpg",
+        "area": "平安座",
+        "tags": [
+            "お肉料理",
+            "ランチ",
+            "離島"
+        ],
+        "location": {
+            "address": "うるま市与那城平安座２５２",
+            "hours": "11:00～15:00"
+        }
+    },
+    {
+        "id": "store005",
+        "name": "らー麺 アオキジ",
+        "description": "こだわり抜いた麺と濃厚な魚介豚骨のハーモニー",
+        "image": "/images/mv_06.jpg",
+        "area": "沖縄市",
+        "tags": [
+            "ラーメン",
+            "ランチ",
+            "がっつり"
+        ],
+        "location": {
+            "address": "沖縄県沖縄市美原3-9-1",
+            "hours": "11:00～15:00"
+        }
+    },
+    {
+        "id": "store006",
+        "name": "pizzeria da ENZO",
+        "description": "沖縄食材を贅沢に使った琉球イタリアンを楽しめる",
+        "image": "/images/mv_07.jpg",
+        "area": "恩納村",
+        "tags": [
+            "ピザ",
+            "パスタ",
+            "ランチ"
+        ],
+        "location": {
+            "address": "沖縄県国頭郡恩納村真栄田７１５−３",
+            "hours": "11:00～15:00"
+        }
+    },
+    {
+        "id": "store007",
+        "name": "隠れ家レストラン KOBA",
+        "description": "カレーグランプリ殿堂入り！超有名店のカレーが楽しめる",
+        "image": "/images/mv_08.jpg",
+        "area": "宜野湾市",
+        "tags": [
+            "カレー",
+            "ロケーション",
+            "ランチ"
+        ],
+        "location": {
+            "address": "沖縄県宜野湾市大山１丁目１２−３２",
+            "hours": "11:00～15:00"
+        }
+    },
+    {
+        "id": "store008",
+        "name": "bistro oialc",
+        "description": "じっくり煮込んだソースとこだわりの生パスタをぜひ！",
+        "image": "/images/mv_09.jpg",
+        "area": "宜野湾市",
+        "tags": [
+            "パスタ",
+            "デザート",
+            "ランチ"
+        ],
+        "location": {
+            "address": "沖縄県宜野湾市大山3-17-11",
+            "hours": "11:00～15:00"
+        }
+    }
+]

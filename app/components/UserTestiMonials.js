@@ -11,7 +11,7 @@ export default function UserTestiMonials() {
         const fetchVoices = async () => {
             try {
                 // public配下に置けば、「/」から始まるpathでアクセス可能
-                const res = await fetch("/config_userTestimonials/_config.json");
+                const res = await fetch("/config/_config_userTestimonials.json");
                 if (!res.ok) {
                     throw new Error(`HTTPエラー: ${res.status}`);
                 }

@@ -2,9 +2,10 @@ import MenuList from "./components/ServiceMenu";
 import UserTestimonials from "./components/UserTestiMonials";
 import FeatureIcons from "./components/FeatureIcon";
 import Top_slider from "./components/top_slider";
-import BackGroundIcons from "./components/BackGroundIcons";
 import HowToUse from "./components/HowToUse";
 import SnsIcons from "./components/SnsIcons";
+import BackGroundIcons from "./components/BackGroundIcons";
+import { SiFoodpanda } from "react-icons/si";
 
 export default function Home() {
 
@@ -31,6 +32,7 @@ export default function Home() {
 
   return (
     <>
+      <BackGroundIcons textIcon="🐼" iconElement={<SiFoodpanda />}/>
       <main>
         {/* MV Section */}
         <section className="w-full text-center pt-16 animate-fadeInUp relative z-10">

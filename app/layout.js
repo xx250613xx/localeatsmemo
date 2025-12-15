@@ -14,7 +14,6 @@ export default function RootLayout({ children }) {
     <html lang="ja">
       <body>
         <Header />
-        <BackGroundIcons />
           {children}
         <Footer />
       </body>

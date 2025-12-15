@@ -1,5 +1,5 @@
 "use client";
-import PageList from "../config_allPageList/_config";
+import PageList from "../../public/config/_config_allPageList";
 import Link from "next/link";
 
 export default function Header() {
