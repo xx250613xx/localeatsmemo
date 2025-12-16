@@ -96,6 +96,27 @@ export default function RankingPage() {
   const allTags = [...new Set(stores.flatMap((s) => s.tags))];
   const allAreas = [...new Set(stores.map((s) => s.area))];
 
+  /*
+  タグとエリアをループして、
+  「渡ってきたエリアに属している」かつ、「渡ってきたタグに属している」(例：北中のランチ)
+  店舗の件数をrowに登録。(例：{ "北中城村": 2, "宜野湾市": 1 })
+  rowを展開して、タグを入れる。(例：{ tag: "ランチ", 北中城村: 2, 宜野湾市: 1 })
+  
+  最終的にcrossTableに配列が渡ってくる。
+  ・例
+  [
+  {
+    tag: "ランチ",
+    北中城村: 2,
+    宜野湾市: 1
+  },
+  {
+    tag: "カレー",
+    北中城村: 1,
+    宜野湾市: 2
+  }
+]
+  */ 
   const crossTable = allTags.map((tag) => {
     const row = {};
     allAreas.forEach((area) => {
@@ -115,7 +136,7 @@ export default function RankingPage() {
         {/* タグランキング */}
         <section className="mb-12">
           <Animate_motion>
-            <h3 className="text-2xl font-semibold mb-4">タグランキング</h3>
+            <h3 className="text-2xl font-semibold mb-4">タグ別ランキング</h3>
             <div className="bg-white shadow-md rounded-lg p-6 w-full overflow-x-auto relative z-10">
               <Bar data={tagData} options={{ responsive: true, maintainAspectRatio: false }} />
             </div>

@@ -10,15 +10,19 @@ export default function BackGroundIcons({ textIcon, iconElement }) {
     const [positions, setPositions] = useState([]);
     const [isRunning, setIsRunning] = useState(true);
 
+    // マウント検知：依存配列空で、初回レンダリング時のみtrueにして、クライアント側で準備できたことを明示
     useEffect(() => {
         setMounted(true);
     }, []);
 
+    // 初期位置設定：クライアント側で準備でき次第、配列生成とgenKeyframesでアイコンの初期位置を決める。
     useEffect(() => {
         if (!mounted) return;
         setPositions(Array.from({ length: iconCount }, (_, i) => genKeyframes(i + 1)));
     }, [mounted]);
 
+    // mountedとisRunningがtrueのときだけ実行。
+    // アイコンランダムアニメーション：5秒ごとに、アイコンをランダムな位置に配置
     useEffect(() => {
         if (!mounted || !isRunning) return;
         const interval = setInterval(() => {
@@ -31,7 +35,24 @@ export default function BackGroundIcons({ textIcon, iconElement }) {
         return () => clearInterval(interval);
     }, [mounted, isRunning]);
 
-    if (!mounted) return null; // SSR/CSR差をなくす
+    /*
+    ちょっと難しいので分からなくなったらまた調べるが、
+    前提として、サーバーが返すHTMLと、クライアントが最初に描画する内容が一致していないとエラーが起きる。
+    
+    そもそもNextではページはSSRされるが、"use client"のファイルは、空のプレースホルダーがhtmlに埋め込まれる仕様で
+    クライアント側でReactが起動すると、そのプレースホルダーに「本物のコンポーネント」をハイドレーション（再描画）する仕組み。
+
+    このコンポーネントでいうと、ランダムな位置にアイコンを配置しているが、この処理は
+    クライアント側ではできるが、サーバ側ではdocumentが無いのでできない。
+    →この差分で、SSRとCSRに差が出てHydration Errorが起きてる(たぶん)
+
+    なので、mountedがtrueになるまで待って(つまり、SSR/CSRの最初の描画を合わせてから)、
+    その後にランダム処理(use Effect)を実行させればエラー起きないよね。
+    というのが、この処理の考え方。
+    */
+
+    // エラー対応：SSRとCSRの差で出るエラー抑止用
+    if (!mounted) return null;
 
     return (
         <>
