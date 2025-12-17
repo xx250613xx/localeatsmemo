@@ -11,7 +11,7 @@ export default function Home() {
 
   const menus = [
     {
-      title: "店舗一覧。",
+      title: "店舗一覧",
       text: "全店舗から条件を絞って検索。",
       link: "/store_list",
       sumb: "https://placehold.jp/fec190/ffffff/307x307.png?text=Store List&css=%7B%22border-radius%22%3A%2215px%22%2C%22font-size%22%3A%2240px%22%2C%22background%22%3A%22%20-webkit-gradient(linear%2C%20left%20top%2C%20left%20bottom%2C%20from(%23f58529)%2C%20to(%23fec190))%22%7D"

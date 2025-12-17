@@ -5,6 +5,9 @@ import { Bar, Line } from "react-chartjs-2";
 import BackGroundIcons from "../components/BackGroundIcons";
 import { GiTigerHead } from "react-icons/gi";
 import Animate_motion from "../animation/animation_motion";
+import ServiceMenu from "../components/ServiceMenu"
+import SnsIcons from "../components/SnsIcons";
+import FeatureIcons from "../components/FeatureIcon";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -30,6 +33,26 @@ ChartJS.register(
 );
 
 export default function RankingPage() {
+  const menus = [
+    {
+      title: "店舗一覧",
+      text: "全店舗から条件を絞って検索。",
+      link: "/store_list",
+      sumb: "https://placehold.jp/fec190/ffffff/307x307.png?text=Store List&css=%7B%22border-radius%22%3A%2215px%22%2C%22font-size%22%3A%2240px%22%2C%22background%22%3A%22%20-webkit-gradient(linear%2C%20left%20top%2C%20left%20bottom%2C%20from(%23f58529)%2C%20to(%23fec190))%22%7D"
+    },
+    {
+      title: "ランキング",
+      text: "人気グルメランキングをチェック。",
+      link: "/ranking",
+      sumb: "https://placehold.jp/fec190/ffffff/307x307.png?text=Ranking&css=%7B%22border-radius%22%3A%2215px%22%2C%22font-size%22%3A%2240px%22%2C%22background%22%3A%22%20-webkit-gradient(linear%2C%20left%20top%2C%20left%20bottom%2C%20from(%23f58529)%2C%20to(%23fec190))%22%7D"
+    },
+    {
+      title: "店舗マップ",
+      text: "エリアごとに気になる店舗を探す",
+      link: "/store_map",
+      sumb: "https://placehold.jp/fec190/ffffff/307x307.png?text=Map&css=%7B%22border-radius%22%3A%2215px%22%2C%22font-size%22%3A%2240px%22%2C%22background%22%3A%22%20-webkit-gradient(linear%2C%20left%20top%2C%20left%20bottom%2C%20from(%23f58529)%2C%20to(%23fec190))%22%7D"
+    }
+  ];
   const [stores, setStores] = useState([]);
 
   useEffect(() => {
@@ -116,7 +139,7 @@ export default function RankingPage() {
     宜野湾市: 2
   }
 ]
-  */ 
+  */
   const crossTable = allTags.map((tag) => {
     const row = {};
     allAreas.forEach((area) => {
@@ -197,6 +220,15 @@ export default function RankingPage() {
           </Animate_motion>
         </section>
       </main>
+      <div className="relative z-10">
+        <ServiceMenu menus={menus} />
+      </div>
+      <div className="py-[4%] relative z-10">
+        <FeatureIcons />
+      </div>
+      <div className="pb-[4%] relative z-10">
+        <SnsIcons />
+      </div>
     </>
   );
 }

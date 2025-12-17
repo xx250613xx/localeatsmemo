@@ -27,7 +27,7 @@ export default function FeatureIcons() {
             {({ animateLine }) => (
             <div className="bg-gray-50 py-12 text-center">
                 <h2 className="text-3xl font-bold text-center mb-10 inline-block">
-                    機能が盛りだくさん！
+                    便利な機能が盛りだくさん！
                     <span
                         className={`block h-[4px] bg-gradient-to-r from-brand-dark via-brand-dark to-brand-light rounded-full mt-2 ${animateLine ? "animate-draw" : ""
                             }`}
