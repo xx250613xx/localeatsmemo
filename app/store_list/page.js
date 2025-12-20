@@ -10,26 +10,6 @@ import FeatureIcons from "../components/FeatureIcon";
 import SnsIcons from "../components/SnsIcons";
 
 export default function StoreList() {
-  const menus = [
-    {
-      title: "店舗一覧",
-      text: "全店舗から条件を絞って検索。",
-      link: "/store_list",
-      sumb: "https://placehold.jp/fec190/ffffff/307x307.png?text=Store List&css=%7B%22border-radius%22%3A%2215px%22%2C%22font-size%22%3A%2240px%22%2C%22background%22%3A%22%20-webkit-gradient(linear%2C%20left%20top%2C%20left%20bottom%2C%20from(%23f58529)%2C%20to(%23fec190))%22%7D"
-    },
-    {
-      title: "ランキング",
-      text: "人気グルメランキングをチェック。",
-      link: "/ranking",
-      sumb: "https://placehold.jp/fec190/ffffff/307x307.png?text=Ranking&css=%7B%22border-radius%22%3A%2215px%22%2C%22font-size%22%3A%2240px%22%2C%22background%22%3A%22%20-webkit-gradient(linear%2C%20left%20top%2C%20left%20bottom%2C%20from(%23f58529)%2C%20to(%23fec190))%22%7D"
-    },
-    {
-      title: "店舗マップ",
-      text: "エリアごとに気になる店舗を探す",
-      link: "/store_map",
-      sumb: "https://placehold.jp/fec190/ffffff/307x307.png?text=Map&css=%7B%22border-radius%22%3A%2215px%22%2C%22font-size%22%3A%2240px%22%2C%22background%22%3A%22%20-webkit-gradient(linear%2C%20left%20top%2C%20left%20bottom%2C%20from(%23f58529)%2C%20to(%23fec190))%22%7D"
-    }
-  ];
   const [stores, setStores] = useState([]);
   const [selectedArea, setSelectedArea] = useState("");   // areaフィルタ
   const [selectedTag, setSelectedTag] = useState("");     // tagフィルタ
@@ -64,7 +44,7 @@ export default function StoreList() {
   return (
     <>
       <BackGroundIcons textIcon="🐘" iconElement={<GiElephant />} />
-      <main className="max-w-6xl mx-auto px-4 py-12">
+      <main className="max-w-6xl mx-auto px-4 py-12 pt-16">
         <h2 className="text-3xl font-bold text-center mb-10">店舗一覧</h2>
 
         {/* 再レンダリング(状態が変わるので、エリアかタグ選択でも)の度に、
@@ -123,7 +103,7 @@ export default function StoreList() {
         </div>
       </main>
       <div className="relative z-10">
-        <ServiceMenu menus={menus} />
+        <ServiceMenu />
       </div>
       <div className="py-[4%] relative z-10">
         <FeatureIcons />

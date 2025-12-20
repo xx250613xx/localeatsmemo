@@ -8,7 +8,7 @@ export default function BackGroundIcons({ textIcon, iconElement }) {
     const iconCount = 10;
     const [mounted, setMounted] = useState(false);
     const [positions, setPositions] = useState([]);
-    const [isRunning, setIsRunning] = useState(true);
+    const [isRunning, setIsRunning] = useState(false);
 
     // マウント検知：依存配列空で、初回レンダリング時のみtrueにして、クライアント側で準備できたことを明示
     useEffect(() => {
@@ -85,7 +85,7 @@ export default function BackGroundIcons({ textIcon, iconElement }) {
                             : { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
                     }
                 >
-                    {isRunning ? `${textIcon} 停止` : `${textIcon} 再開`}
+                    {isRunning ? `${textIcon} を停止` : `${textIcon} を動かす`}
                 </motion.span>
             </button>
         </>

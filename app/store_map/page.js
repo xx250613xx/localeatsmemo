@@ -10,26 +10,6 @@ import BackGroundIcons from "../components/BackGroundIcons";
 import { IoFishSharp } from "react-icons/io5";
 
 export default function MapPage() {
-  const menus = [
-    {
-      title: "店舗一覧",
-      text: "全店舗から条件を絞って検索。",
-      link: "/store_list",
-      sumb: "https://placehold.jp/fec190/ffffff/307x307.png?text=Store List&css=%7B%22border-radius%22%3A%2215px%22%2C%22font-size%22%3A%2240px%22%2C%22background%22%3A%22%20-webkit-gradient(linear%2C%20left%20top%2C%20left%20bottom%2C%20from(%23f58529)%2C%20to(%23fec190))%22%7D"
-    },
-    {
-      title: "ランキング",
-      text: "人気グルメランキングをチェック。",
-      link: "/ranking",
-      sumb: "https://placehold.jp/fec190/ffffff/307x307.png?text=Ranking&css=%7B%22border-radius%22%3A%2215px%22%2C%22font-size%22%3A%2240px%22%2C%22background%22%3A%22%20-webkit-gradient(linear%2C%20left%20top%2C%20left%20bottom%2C%20from(%23f58529)%2C%20to(%23fec190))%22%7D"
-    },
-    {
-      title: "店舗マップ",
-      text: "エリアごとに気になる店舗を探す",
-      link: "/store_map",
-      sumb: "https://placehold.jp/fec190/ffffff/307x307.png?text=Map&css=%7B%22border-radius%22%3A%2215px%22%2C%22font-size%22%3A%2240px%22%2C%22background%22%3A%22%20-webkit-gradient(linear%2C%20left%20top%2C%20left%20bottom%2C%20from(%23f58529)%2C%20to(%23fec190))%22%7D"
-    }
-  ];
 
   // 地図インスタンスに限らず、reactでは何らかの状態が変わると、コンポーネント全体が再レンダリングされる
   // ので、状態が変わっても値を保持できるuserefで、値(マップのインスタンスと、dom)を保持する
@@ -108,7 +88,7 @@ export default function MapPage() {
   return (
     <>
       <BackGroundIcons textIcon="🐟" iconElement={<IoFishSharp />} />
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white pt-16">
         <h1 className="text-lg md:text-2xl font-semibold text-slate-800 px-4 py-4">
           店舗マップ
         </h1>
@@ -186,7 +166,7 @@ export default function MapPage() {
           </div>
         </main>
         <div className="relative z-10">
-          <ServiceMenu menus={menus} />
+          <ServiceMenu />
         </div>
         <div className="relative z-10 py-[4%]">
           <FeatureIcons />

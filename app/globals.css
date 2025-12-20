@@ -78,3 +78,49 @@ body {
   animation: draw 1s ease-out forwards;
 }
 
+@keyframes spinOnce {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-once {
+  animation: spinOnce 0.6s ease-in-out;
+}
+
+@keyframes firework-up {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0.6;
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-80%) scale(1);
+  }
+  100% {
+    transform: translateY(-200%) scale(0.8);
+    opacity: 0;
+  }
+}
+.particle-icon {
+  font-size: 3rem;
+  position: absolute;
+  color: #f97316;
+}
+/* hover中は常にループ */
+.group:hover .particle-icon {
+  animation: firework-up 1.4s ease-out infinite;
+}
+
+/* 
+  生成される「予定」の要素にあらかじめdelayして、ランダムっぽくしている。
+  (本当はbgのアイコン同様にrandom値使って、ハイドレエラー処理した方がよいが)
+*/
+.firework-0 { animation-delay: 0s !important; }
+.firework-1 { animation-delay: 0.8s !important; }
+.firework-2 { animation-delay: 1s !important; }
+.firework-3 { animation-delay: 0.6s !important; }
+.firework-4 { animation-delay: 1.2s !important; }
+.firework-5 { animation-delay: 0.4s !important; }
+.firework-6 { animation-delay: 0.2s !important; }
+
+
+
