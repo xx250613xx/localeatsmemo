@@ -122,5 +122,20 @@ body {
 .firework-5 { animation-delay: 0.4s !important; }
 .firework-6 { animation-delay: 0.2s !important; }
 
-
+/* ▼ タイル画像が上から下へ流れるアニメーション */
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.animate-scroll {
+  animation: scrollDown 30s linear infinite;
+}
+/* 画像がカラム内で分割されないようにする */
+.break-inside-avoid {
+  break-inside: avoid;
+}
 

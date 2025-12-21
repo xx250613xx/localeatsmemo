@@ -8,6 +8,7 @@ import { GiCrownedHeart } from "react-icons/gi";
 import { TbMapHeart } from "react-icons/tb";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross2 } from "react-icons/rx";
+import { FaHandHoldingHeart } from "react-icons/fa";
 
 export default function Header() {
     const allpage = PageList();
@@ -16,6 +17,7 @@ export default function Header() {
         store_list: <PiListHeartBold />,
         ranking: <GiCrownedHeart />,
         store_map: <TbMapHeart />,
+        inquiry: <FaHandHoldingHeart />,
     };
 
     // headerの表示状態
