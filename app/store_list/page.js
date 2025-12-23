@@ -82,7 +82,7 @@ export default function StoreList() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-10 justify-items-center">
           {filteredStores.map((store, index) => (
             <Animate_motion key={index}>
-              <Link href={"#"}>
+              <Link href={`store_list/${store.id}`}>
                 <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow 
                 p-6 text-center flex flex-col relative z-10
                 w-full sm:w-[520px] h-[380px]">
