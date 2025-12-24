@@ -8,10 +8,14 @@ import { GiHorseHead } from "react-icons/gi";
 
 import { notFound } from "next/navigation";
 async function getStore(id) {
+    // jsonまでのpath生成、cwd()はプロジェクトルート
     const filePath = path.join(process.cwd(), "public", "config", "_config_storelist.json");
+    // json読み込み
     const jsonData = await fs.readFile(filePath, "utf-8");
     const stores = JSON.parse(jsonData);
 
+    // json内に、アクセスされたidと一致する店舗idが存在するか確認
+    // あればstoreに入れる
     const store = stores.find((s) => s.id === id);
 
     if (!store) {
